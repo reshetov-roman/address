@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Личный кабинет (Адреса)</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="sass/main.css">
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=e5b3c08c-0977-4c20-af32-591e06366e56&lang=ru_RU" type="text/javascript"></script>
+	<!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e5b3c08c-0977-4c20-af32-591e06366e56" type="text/javascript"></script> -->
+
+</head>
+<body>
+
+	
+
+	<div class="site-wrap">
+		<div class="page-address" id="page-address__init">
+			<div class="container">
+				<h1 class="page-address-title">Адреса</h1>
+				<div class="page-address-wrapper">
+					<div class="page-address-wrapper__add-address">
+						<span>Добавить новый адрес</span>
+					</div>
+					<div class="page-address-wrapper__list-address">
+						<div class="page-address-wrapper__list-address--created">
+							<form class="page-address-wrapper__list-address--fields">
+								<div class="page-address-wrapper__list-address--title">Добавить новый адрес</div>
+								<div class="page-address-wrapper__list-address--control" data-control-valid>
+									<input type="text" id="city" name="city" data-clear data-city class="page-address-wrapper__list-address--field" required>
+									<label class="page-address-wrapper__list-address--label">Город</label>
+								</div>
+								<div class="page-address-wrapper__list-address--control" data-control-valid>
+									<input type="text" id="region" name="region" data-clear data-area class="page-address-wrapper__list-address--field" required>
+									<label class="page-address-wrapper__list-address--label">Область</label>
+								</div>
+								<div class="page-address-wrapper__list-address--control" data-control-valid>
+									<input type="text" id="street" name="street" data-clear data-street-house class="page-address-wrapper__list-address--field" required>
+									<label class="page-address-wrapper__list-address--label">Улица и дом</label>
+								</div>
+								<div class="page-address-wrapper__list-address--checkboxes">
+									<div class="page-address-wrapper__list-address--checkbox-wrp">
+										<label class="page-address-wrapper__list-address--switch">
+											<input type="checkbox" class="page-address-wrapper__list-address--checkbox">
+											<span class="page-address-wrapper__list-address--slide"></span>
+										</label>
+										<label class="page-address-wrapper__list-address--text">Частный дом</label>
+									</div>
+									<div class="page-address-wrapper__list-wrp">
+										<div class="page-address-wrapper__list-wrp--control" data-control-valid>
+											<input data-office data-clear type="text" data-clear class="page-address-wrapper__list-wrp--field" required>
+											<label class="page-address-wrapper__list-wrp--label">Кв/Офис</label>
+										</div>
+										<div class="page-address-wrapper__list-wrp--control" data-control-valid>
+											<input data-entrance data-clear type="text" data-clear class="page-address-wrapper__list-wrp--field" required>
+											<label class="page-address-wrapper__list-wrp--label">Подъезд</label>
+										</div>
+										<div class="page-address-wrapper__list-wrp--control" data-control-valid>
+											<input data-story data-clear type="text" data-clear class="page-address-wrapper__list-wrp--field" required>
+											<label class="page-address-wrapper__list-wrp--label">Этаж</label>
+										</div>
+									</div>
+								</div>
+								<div class="page-address-wrapper__list-address--title">Данный получателя</div>
+								<div class="page-address-wrapper__list-address--control" data-control-valid>
+									<input type="text" data-clear data-lastname class="page-address-wrapper__list-address--field" required>
+									<label class="page-address-wrapper__list-address--label">Имя и фамилия</label>
+								</div>
+								<div class="page-address-wrapper__list-address--control" data-control-valid>
+									<input type="text" data-clear maxlength="16" data-mobile class="page-address-wrapper__list-address--field" required>
+									<label class="page-address-wrapper__list-address--label">Мобильный телефон</label>
+								</div>
+								<div class="page-address-wrapper__list-address--buttons">
+									<button class="page-address-wrapper__list-address--cancel" type="button">Отменить</button>
+									<button data-save class="page-address-wrapper__list-address--save" type="submit">Сохранить</button>
+								</div>
+							</form>
+								<!-- Блок для отобрадения карты -->
+								<div id="map"></div>
+						</div>
+					</div>
+				 </div>
+				 <!-- start Выгружаем добавленные aдреса  -->
+				 <ul class="page-address__added-addresses">
+					<li class="page-address__added-addresses--address" data-form_id="30">
+						<form class="page-address__added-addresses--form">
+							<div class="page-address__added-addresses--info">
+								<span class="page-address__added-addresses--name">Иван Иванов</span>
+								<span class="page-address__added-addresses--all-addresses">Гоголя, дом 50, кв 21, Усть-Каменогорск, Усть-Каменогорск область</span>
+							</div>
+							<div class="page-address__added-addresses--buttons">
+								<button type="button" class="page-address__added-addresses--edit" data-form_id="30"></button>
+								<button type="button" class="page-address__added-addresses--delete" data-form_id="30"></button>
+							</div>
+						</form>
+					</li>
+				</ul>
+				<!-- end Выгружаем добавленные aдреса  -->
+				<!-- start-popup -->
+				<div class="page-address__modal">
+					<div class="page-address__modal--wrp">
+					  <h6 class="page-address__modal--title">Удалить адрес?</h6>
+					  <div class="page-address__modal--text">
+						Вы уверены, что хотите удалить этот адрес из своей учетной записи?
+					  </div>
+					  <form class="page-address__modal--form">
+						<button type="submit" class="page-address__modal--delete">Удалить</button>
+					  </form>
+					  <div class="modal-close page-address__modal--close">&times;</div>
+					</div>
+				  </div>
+				<!-- end-popup -->
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div class="page-address__backdrop hidden-modal-popup" id="modal-backdrop"></div>
+
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+	 <script src="js/libs/imask.js"></script>
+	 <script src="js/script.js"></script>
+
+	 <script>
+		
+	  </script>
+
+	
+
+
+	
+
+</body>
+</html>

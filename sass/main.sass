@@ -1,0 +1,435 @@
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+*:before, *:after
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-weight: 400
+	overflow-x: hidden
+	margin: 0
+	height: 100vh
+	font-family: 'Roboto Serif', serif
+	
+p
+	margin: 0
+
+a
+	text-decoration: none
+	outline: none
+	display: inline-block
+	color: #000
+
+img
+	max-width: 100%
+	height: auto
+	vertical-align: bottom
+
+ul li,
+ol li
+	list-style: none
+	display: block
+	margin: 0
+
+span
+	display: inline-block
+
+ul, ol
+	display: block
+	margin: 0
+	padding-left: 0
+
+button
+	outline: none
+	border: 0
+	padding: 0
+	cursor: pointer
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	font-weight: normal
+
+strong
+	display: inline-block
+
+.site-wrap
+	overflow: hidden
+.container
+	margin: 0 auto
+	position: relative
+	padding: 0 15px
+	max-width: 1030px
+	width: 100%
+
+//ColorVariables
+$colorBg1: #FAFAFA
+$colorBg2: #fff
+$colorButton: #EFEFF0
+$colorError: #FF392E
+$colorFrame: #EBEBF0
+$colorSite: #0100D3
+$colorTxt: #C5C5C7
+$colorBlue: #2F80ED
+$colorDark: #7B828A
+$colorGreen: #30DB5B
+$colorBlack: #262626
+$colorOrange: #F15A2C
+
+
+.page-address
+	&__added-addresses
+		display: none
+		margin-top: 20px
+		&.block
+			display: block
+		&--address
+			color: #262626
+			border-radius: 10px
+			border: 2px solid #262626
+			overflow: hidden
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+		&.not-active
+			display: none
+		&--form
+			position: relative
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 10px 110px 10px 20px
+		&--info
+		&--name
+			display: block
+			color: #C5C5C7
+			font-size: 12px
+		&--all-addresses
+			font-size: 16px
+			color: #262626
+		&--buttons
+			display: flex
+			align-items: center
+			width: 100px
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+		&--edit,
+		&--delete
+			position: relative
+			height: 100%
+			background: transparent
+			width: 50%
+			&:hover
+				background-color: #fafafa
+		&--edit
+			&:before
+				content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADoSURBVHgBpdPBDYIwFAbg92wPHhnBMax40Al0A0fQDYwb6AY6gToB8UQ8wQYyAgmJYIJ9vkIgMXqg5U9Imj/pB6R9CJaJosjL89fKrBHpqpRK0AYIw3BEBAERxUykALTkZy7tATj6/mRXd/dEa70e2ANq1/RlqW/cjYQrYHpEOHO/H7gCTT+dqhP2AZoe+wJ/EVvgB3EBvhBXwKQ6nSCIPFegRYTIZ1pD4gKYyBrBBSJeXIAW4Zs3I3ofzIRm2XPJm7ddgWq/eSv/yoPXCU+nV38RXnx/fIWOkUUxTKXMN0JAzNN5A4d8ANsn+4msK4eqAAAAAElFTkSuQmCC')
+			&:after
+				content: ''
+				position: absolute
+				width: 1px
+				right: 0
+				top: 14px
+				bottom: 14px
+				background: #EBEBF0
+		&--delete
+			&:before
+				content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAARCAYAAAACCvahAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADOSURBVHgB7VPBDYJAENw9TPBpJ/Ij8JEO0A4ogQ60A0vQFqwACDngR+yAEvwZHrjuxYgrkmjiUyfZZG+yczuXzCGMIM/LQClY3M+IeEKkg+d5jZxTQ2FRVLFSuJUcETlEkCRJPZP85GUtUMhbYt/3M8lqXdW2fZ5z2/OotXbYQPiwCBFvSbltpHjIm6dI25ubRdgPhZLnSwJTXXeRtkqCD8Bza1OmV/AF/uLfEPcfgyOXcnJ2MBJNCZNxy1LLp81tO11xXjN4C4pc1z2a7goLVEnWPpCvxAAAAABJRU5ErkJggg==')
+	&-title
+		font-size: 24px
+		color: #262626
+		font-weight: 600
+	&-wrapper
+		margin-top: 24px
+		&__add-address
+			position: relative
+			max-width: 395px
+			width: 100%
+			padding: 10px 20px
+			border: 1px solid #EBEBF0
+			border-radius: 10px
+			background-color: #fff
+			font-size: 14px
+			color: #262626
+			cursor: pointer
+			transition: border-color .3s
+			&::after
+				content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAYAAADwMZRfAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABlSURBVHgB7ZKxDYAwDARtb8AGoYlSMhKbICakTUfmSGFjamS+QaLJVZH+dE1MBMg5H8gRwixfRCAj8oRLKauZbZHgW2LmFu2quvP98FB6kU4RmaO91toI4cdmyBlf/Fek9z4h5wIMjBnLKu+7jgAAAABJRU5ErkJggg==')
+				position: absolute
+				right: 20px
+				top: 12px
+			&:hover
+				transition: border-color .3s
+				border-color: #a1a1a1
+		&__list-address
+			&--created
+				display: none
+				justify-content: space-between
+				&.active
+					display: flex
+					animation: showForm 0.5s linear
+			&--fields
+				max-width: 500px
+				width: 100%
+				margin-right: 40px
+			&--title
+				margin-bottom: 18px
+				color:#262626
+				font-size: 16px
+				font-weight: 700
+			&--control
+				position: relative
+				margin-bottom: 8.5px
+				&:last-child
+					margin-bottom: 0
+			&--field
+				outline: none
+				width: 100%
+				padding: 20px
+				border-radius: 10px
+				font-size: 16px
+				color: $colorBlack
+				border: 1px solid $colorFrame
+				&:focus + label,
+				&:valid + label
+					font-size: 12px 
+					color: #BFBFBF
+					top: 16px 
+					left: 10px 
+					background: $colorBg2 
+					padding-left: 10px
+				&:focus,
+				&:valid
+					padding: 30px 20px 10px 20px
+			&--label
+				transition: .3s
+				position: absolute
+				left: 20px
+				top: 50%
+				transform: translateY(-50%)
+				color: #BFBFBF
+				font-size: 16px
+				pointer-events: none
+			&--checkboxes
+				margin: 15px 0
+			&--checkbox-wrp
+				display: inline-flex
+				align-items: center
+				&:last-child
+					margin-bottom: 0
+			&--switch
+				position: relative 
+				display: inline-block 
+				width: 50px 
+				height: 30px
+			&--checkbox
+				opacity: 0 
+				width: 0 
+				height: 0 
+				z-index: -1
+				&:checked
+					& + span 
+						background-color: $colorGreen
+						&::before 
+							background-position: center center
+							background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACXSURBVHgBldCxDYMwEAXQf1EG8Ag0KdLdCtmAmiqbhGyQDdJF2SIjxHVShBFSg8HcgYSEwGBOOsny/WdbJkQW/84GrrzL0u7jQfUCiOGRUDyAggJ1faKtwB6fBckggXNvoLnZw+O6BnS26yNemnL+Zpc1oNU9jz8Zg0hDRg7IZTsNgQFNYXf5LBihEfT4h0Dgx1KjvZRpAVrFXzhTRWuDAAAAAElFTkSuQmCC')
+							transform: translateX(18px) 
+							background-color: $colorBg2
+			&--slide
+				position: absolute 
+				top: 0 
+				bottom: 0 
+				left: 0 
+				right: 0 
+				background-color: #EFEFEF
+				cursor: pointer 
+				border-radius: 34px 
+				transition: 0.4s 
+				&::before 
+					content: '' 
+					position: absolute 
+					left: 3px 
+					top: 2px
+					height: 26px 
+					width: 26px 
+					background-color: #fff
+					background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADASURBVHgBjdHdCcIwEADgS2hLHvMaX9IROkLdwBFcwQl0BEfQSeoGjhAbKgEnKNQQkxZBaf4OwnHJfRDukBCCEkIoY+wBGfHtx0VBmmmCTilVp5GqMSZ329/OF1KqvT0ihh3qeyXsOf09xHAQxXAIIR+26ViWsB1HAIyhs/WVcxaHv9iYuVwhF9gHtYabQwghWlVw8fWs4DLy5XsA5pC1Kt8gkquKjTyIk3vy4Rzkw2gYXo3W75bzzRkyQsrnzuUP+GLAM/QJQJUAAAAASUVORK5CYII=')
+					background-position: center center
+					background-repeat: no-repeat
+					border-radius: 50% 
+					transition: 0.4s
+			&--text
+				margin-left: 10px
+				user-select: none
+				color: $colorBlack
+				font-size: 16px
+				font-weight: 600
+			&--buttons
+				display: flex
+				align-items: center
+				justify-content: flex-end
+				margin-top: 25px
+			&--cancel,
+			&--save
+				color: #262626
+				font-size: 16px
+				border-radius: 10px
+				padding: 15px 50px
+			&--cancel
+				outline: none
+				background-color: #fff
+				border: 1px solid #EBEBF0
+			&--save
+				outline: none
+				background-color: #EFEFF0
+				margin-left: 20px
+				&.active
+					background-color: #0100D3
+					color: #fff
+		&__list-wrp
+			display: flex
+			margin-top: 15px
+			&--control
+				position: relative
+				margin-left: 10px
+				&:first-child
+					margin-left: 0
+			&--field
+				outline: none
+				width: 100%
+				padding: 20px
+				border-radius: 10px
+				font-size: 16px
+				color: $colorBlack
+				border: 1px solid $colorFrame
+				&:focus + label,
+				&:valid + label
+					font-size: 12px 
+					color: #BFBFBF
+					top: 16px 
+					left: 10px 
+					background: $colorBg2 
+					padding-left: 10px
+				&:focus,
+				&:valid
+					padding: 30px 20px 10px 20px
+			&--label
+				transition: .3s
+				position: absolute
+				left: 20px
+				top: 50%
+				transform: translateY(-50%)
+				color: #BFBFBF
+				font-size: 16px
+				pointer-events: none
+			&--map
+				margin-top: 38px
+				width: 100%
+				height: 100%
+		&__no-address
+			margin-top: 48px
+			margin-left: 55px
+	&__modal
+		position: fixed
+		z-index: 100
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -80%) scale(.9)
+		width: 520px
+		max-width: 95%
+		box-shadow: 0 10px 30px rgba(#000, .2)
+		background-color: #fff
+		border-radius: 10px
+		transition: all .18s ease-in-out
+		visibility: hidden
+		opacity: 0
+		&.show
+			transform: translate(-50%, -50%) scale(1)
+			opacity: 1
+			visibility: visible
+		&--wrp
+			position: relative
+			padding: 33px 30px 30px 30px
+			text-align: center
+		&--title
+			color: $colorBlack
+			font-size: 24px
+			margin-bottom: 13px
+		&--text
+			font-size: 14px
+			color: #262626
+			margin-bottom: 19px
+		&--delete
+			outline: none
+			border-radius: 10px
+			background-color: #0100D3
+			color: #fff
+			padding: 20px 50px
+			border-radius: 10px
+			transition: background-color .3s
+			&:hover
+				transition: background-color .3s
+				background-color: #2929e4
+		&--close
+			position: absolute
+			right: 12px
+			top: 0
+			font-size: 29px
+			user-select: none
+			cursor: pointer
+			&:hover
+				color: red
+	&__backdrop
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(#000, .6)
+		z-index: 11
+		&.hidden-modal-popup
+			display: none
+
+
+@keyframes showForm
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+
+#map
+	width: 100%
+	height: 250px
+		
+.page-address .ymaps-2-1-79-map-copyrights-promo
+	display: none
+
+.page-address .ymaps-2-1-79-copyright__wrap
+	display: none
+.page-address .ymaps-2-1-79-gotoymaps__text
+	display: none
